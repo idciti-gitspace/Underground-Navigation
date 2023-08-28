@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLayout"/>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="10"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"/>
+        <LinearLayout
+            android:id="@+id/floorLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            >
+            <ToggleButton
+                android:id="@+id/floor1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textOn="1F_ON"
+                android:textOff="1F_OFF"
+                android:onClick="onToggleClicked1"/>
+            <ToggleButton
+                android:id="@+id/floor2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textOn="B2F_ON"
+                android:textOff="B2F_OFF"
+                android:onClick="onToggleClicked2"/>
+            <ToggleButton
+                android:id="@+id/switchb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textOn="range:5m"
+                android:textOff="range:3m"
+                android:onClick="switchcsv"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="시점 초기화"/>
+
+        <Button
+            android:id="@+id/currLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="현재 위치"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
